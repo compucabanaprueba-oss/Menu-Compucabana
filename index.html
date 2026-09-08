@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compu Cabana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .menu-container {
+            background-color: white;
+            border-radius: 25px;
+            box-shadow: none;
+            padding: 30px 25px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            border: none;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px dotted #ccc;
+        }
+
+        .logo img {
+            max-width: 380px;
+            width: 90%;
+            height: auto;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0 25px;
+            color: #555;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+
+        .menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .menu-option {
+            display: flex;
+            align-items: center;
+            background-color: #fafafa;
+            border-radius: 15px;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .menu-option::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: #e74c3c;
+            border-radius: 0 15px 15px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-option:hover::after {
+            opacity: 1;
+        }
+
+        .menu-option:hover {
+            background-color: #fff;
+            transform: translateX(5px);
+            box-shadow: none;
+            border-color: #ddd;
+        }
+
+        .menu-option .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: none;
+        }
+
+        .menu-option .icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .menu-option .icon img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .menu-option.whatsapp .icon {
+            background-color: #25d366;
+        }
+
+        .menu-option.web .icon {
+            background-color: #1a1a2e;
+        }
+
+        .menu-option.google .icon {
+            background-color: #fff;
+            border: 2px solid #eee;
+        }
+
+        .menu-option .text {
+            text-align: left;
+        }
+
+        .menu-option .text h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: #222;
+        }
+
+        .menu-option .text p {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.3;
+        }
+
+        .footer {
+            color: #333;
+            font-size: 16px;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+        }
+
+        .footer span {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @media (min-width: 500px) {
+            .menu-container {
+                padding: 40px 35px;
+            }
+
+            .logo img {
+                max-width: 450px;
+            }
+
+            .menu-option .icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .menu-option .icon svg,
+            .menu-option .icon img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .menu-option .text h3 {
+                font-size: 18px;
+            }
+
+            .menu-option .text p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="logo">
+            <img src="logo.png" alt="Compu Cabaña" style="max-width: 400px; width: 100%; height: auto;">
+        </div>
+
+        <div class="divider">
+            <span>CONECTATE CON NOSOTROS</span>
+        </div>
+
+        <div class="menu-options">
+            <a href="https://wa.me/573164713501" class="menu-option whatsapp" target="_blank">
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                </div>
+                <div class="text">
+                    <h3>WhatsApp</h3>
+                    <p>Escríbenos directamente</p>
+                </div>
+            </a>
+
+            <a href="https://www.compucabana.com/" class="menu-option web" target="_blank">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="#fff">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <div class="text">
+                    <h3>Página Web</h3>
+                    <p>Conoce más sobre nuestros servicios</p>
+                </div>
+            </a>
+
+            <a href="https://g.page/r/CVVLIQqFVSRBEAE/review" class="menu-option google" target="_blank">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                </div>
+                <div class="text">
+                    <h3>Google Reseñas</h3>
+                    <p>Déjanos tu opinión y ayúdanos a crecer</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            ¡Gracias <span>por</span> preferirnos!
+        </div>
+    </div>
+</body>
+</html>
